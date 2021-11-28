@@ -26,7 +26,7 @@ i=1
 while true; do
     shell=$(echo ${INPUT_SHELL} | cut -d "|" -f $i)
     if [ "$shell" != "" ]; then
-        ((i++))
+        let i+=1
         echo $shell
         ssh server $shell
         rc=$(echo $?)
