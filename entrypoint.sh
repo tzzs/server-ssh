@@ -22,9 +22,17 @@ echo "Start executing commands..."
 
 echo ${INPUT_SHELL}
 
-for shell in ${INPUT_SHELL//|/}; do
-    echo $shell
-    ssh server $shell
+index=1
+while((1==1))
+do
+    shell=`echo ${INPUT_SHELL} | cut -d "|" -f$i`
+    if [ "$shell" != ""]
+    then
+        ((i++))
+        ssh server $shell
+    else
+        break
+    fi
 done
 
 echo "Commands execution completed."

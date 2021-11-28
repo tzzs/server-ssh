@@ -34,6 +34,6 @@ jobs:
           IP: ${{secrets.IP}}
           PORT: ${{secrets.PORT}}
           SHELL: |
-            "echo action-test port"
-            "echo successful"
-            "pwd"
+            "echo action-test port" |
+            "echo successful" |
+            "pwd" |
