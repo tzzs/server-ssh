@@ -22,7 +22,7 @@ echo "Start executing commands..."
 
 echo ${INPUT_SHELL}
 
-index=1
+i=1
 while true
 do
     shell=`echo ${INPUT_SHELL} | cut -d "|" -f $i`
