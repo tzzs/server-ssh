@@ -1,0 +1,39 @@
+name: "server-ssh-action-test"
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "releases/*"
+      - "feature*"
+
+jobs:
+  # test action works running from the graph
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
+          USERNAME: ${{secrets.USERNAME}}
+          IP: ${{secrets.IP}}
+          SHELL: |
+            echo action-test
+            echo successful
+            pwd
+            < test.sh
+  test-port:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
+          USERNAME: ${{secrets.USERNAME}}
+          IP: ${{secrets.IP}}
+          PORT: ${{secrets.PORT}}
+          SHELL: |
+            "echo action-test port"
+            "echo successful"
+            "pwd"

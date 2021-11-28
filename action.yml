@@ -1,0 +1,26 @@
+name: "Server SSH"
+description: ""
+author: "tzzs"
+branding:
+  icon: "server"
+  color: "blue"
+inputs:
+  PRIVATE_KEY:
+    description: "server private key"
+    required: true
+  USERNAME:
+    description: "server login username"
+    required: true
+  IP:
+    description: "server ip"
+    required: true
+  PORT:
+    description: "The port to connect to the server ssh"
+    required: false
+    default: "22"
+  SHELL:
+    description: "shell to execute on server"
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
