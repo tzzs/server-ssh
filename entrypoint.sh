@@ -21,6 +21,7 @@ cat ${SSH_DIR}/config
 echo "Start executing commands..."
 
 for shell in ${INPUT_SHELL}; do
+    echo $shell
     ssh server $shell
 done
 
