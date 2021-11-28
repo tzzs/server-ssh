@@ -16,6 +16,8 @@ Host server
     StrictHostKeyChecking no
 END
 
+ls -l ~/.ssh
+
 cat ${SSH_DIR}/config
 
 echo "Start executing commands..."
