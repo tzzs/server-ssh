@@ -22,7 +22,7 @@ echo "Start executing commands..."
 
 echo ${INPUT_SHELL}
 
-for shell in ${INPUT_SHELL}; do
+for shell in ${INPUT_SHELL//|/}; do
     echo $shell
     ssh server $shell
 done

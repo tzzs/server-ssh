@@ -19,9 +19,9 @@ jobs:
           USERNAME: ${{secrets.USERNAME}}
           IP: ${{secrets.IP}}
           SHELL: |
-            echo action-test
-            echo successful
-            pwd
+            echo action-test |
+            echo successful |
+            pwd |
             < test.sh
   test-port:
     runs-on: ubuntu-latest
