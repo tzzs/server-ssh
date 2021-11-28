@@ -29,7 +29,8 @@ do
     if [ "$shell" != ""]
     then
         ((i++))
-        ssh server $shell
+        echo $shell
+        ssh -c "ssh server $shell"
     else
         break
     fi
