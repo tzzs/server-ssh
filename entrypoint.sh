@@ -23,14 +23,13 @@ echo "Start executing commands..."
 echo ${INPUT_SHELL}
 
 i=1
-while true
-do
-    shell=`echo ${INPUT_SHELL} | cut -d "|" -f $i`
-    if [ "$shell" != ""]
-    then
+while true; do
+    shell=$(echo ${INPUT_SHELL} | cut -d "|" -f $i)
+    if [ "$shell" != "" ]; then
         ((i++))
         echo $shell
         ssh -c "ssh server $shell"
+        rc=$(echo $?)
     else
         break
     fi
