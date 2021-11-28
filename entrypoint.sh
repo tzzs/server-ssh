@@ -25,7 +25,7 @@ echo ${INPUT_SHELL}
 index=1
 while true
 do
-    shell=`echo ${INPUT_SHELL} | cut -d "|" -f$i`
+    shell=`echo ${INPUT_SHELL} | cut -d "|" -f $i`
     if [ "$shell" != ""]
     then
         ((i++))
