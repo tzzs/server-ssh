@@ -28,8 +28,11 @@ while true; do
     if [ "$shell" != "" ]; then
         ((i++))
         echo $shell
-        ssh -c "ssh server $shell"
+        ssh server $shell
         rc=$(echo $?)
+        if [ $rc != 0 ]; then
+            echo "failed to execut [$shell]"
+        fi
     else
         break
     fi
